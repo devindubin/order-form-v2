@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import OrderForm from "./components/OrderForm";
+import ShoppingCart from "./components/ShoppingCart";
+import { useState } from "react";
+import { ProductItem } from "./definitions/definitions";
 
 function App() {
+  const [shoppingCart, setShoppingCart] = useState<Array<ProductItem>>([
+    // { id: 1, name: "Test", size: "Medium", quantity: 10 },
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="order__page">
+        <OrderForm setShoppingCart={setShoppingCart} cart={shoppingCart} />
+        <ShoppingCart cart={shoppingCart} />
+      </div>
     </div>
   );
 }
