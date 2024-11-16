@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <div className="order__page">
         <OrderForm setShoppingCart={setShoppingCart} cart={shoppingCart} />
-        <ShoppingCart cart={shoppingCart} />
+        <ShoppingCart setShoppingCart={setShoppingCart} cart={shoppingCart} />
       </div>
     </div>
   );

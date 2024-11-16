@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { ProductItem } from "../definitions/definitions";
+import { CompletedCart, ProductItem } from "../definitions/definitions";
 // import { ShoppingCart } from "./definitions/definitions";
-function OrderForm({ setShoppingCart, cart }: any) {
+function OrderForm({
+  setShoppingCart,
+  cart,
+}: {
+  setShoppingCart: React.Dispatch<React.SetStateAction<ProductItem[]>>;
+  cart: ProductItem[];
+}) {
   const productList = [
     { name: "Tshirt" },
     { name: "Sweatshirt" },
@@ -24,16 +30,29 @@ function OrderForm({ setShoppingCart, cart }: any) {
       name: itemChoice,
       size: sizeChoice,
       quantity: quantity,
+      cost: itemChoice === "Tshirt" ? 10 : itemChoice === "Sweatshirt" ? 15 : 5,
     };
 
     const newCart = [...cart, addedItem];
     setShoppingCart(newCart);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log();
+    const submittedCart: CompletedCart = {
+      fullName: fullName,
+      membershipNumber: membershipNumber,
+      cart: cart,
+    };
+
+    console.log(submittedCart);
+  };
+
   return (
     <main>
       <div className="card">
-        <form className="order__form" action="/">
+        <form className="order__form" onSubmit={handleSubmit}>
           <label htmlFor="fullName">Full Name</label>
           <input
             type="text"
@@ -58,8 +77,9 @@ function OrderForm({ setShoppingCart, cart }: any) {
             id="productSelect"
             value={itemChoice}
             onChange={(e) => setItemChoice(e.target.value)}
+            // defaultValue=""
           >
-            <option value="" selected disabled hidden>
+            <option value="" disabled hidden>
               Choose
             </option>
             {productList.map((product) => {
@@ -78,7 +98,12 @@ function OrderForm({ setShoppingCart, cart }: any) {
             value={sizeChoice}
             onChange={(e) => setSizeChoice(e.target.value)}
           >
-            <option value="" selected disabled hidden>
+            <option
+              value=""
+              // defaultValue={"Pick Size"}
+              disabled
+              hidden
+            >
               Pick Size
             </option>
             <option value="Small">Small</option>

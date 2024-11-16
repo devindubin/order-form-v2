@@ -36,3 +36,33 @@ form {
   display: grid;
   gap: 0.5rem;
 }
+
+div.card-cart {
+  display: flex;
+  flex-direction: column;
+  background-color: aqua;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+div.shopping__cart {
+  background-color: aliceblue;
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
+div.shopping__list {
+  padding: 0;
+}
+
+p.shopping__list__item {
+  display: flex;
+  align-items: center;
+}
+
+.shopping__list__item__deleteicon:hover {
+  cursor: pointer;
+}
