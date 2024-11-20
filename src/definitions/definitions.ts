@@ -10,4 +10,13 @@ export type CompletedCart = {
   fullName: string;
   membershipNumber: string;
   cart: ProductItem[];
+  totalCost: number;
+};
+
+export type ProductInventory = {
+  id: number;
+  name: string;
+  sizesAvailable: Array<string>;
+  price: number;
+  description: string;
 };

@@ -24,6 +24,11 @@ div.order__page {
   display: flex;
 }
 
+main {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
 div.card {
   padding: 1rem;
   margin: 1rem;
@@ -36,6 +41,9 @@ form {
   display: grid;
   gap: 0.5rem;
 }
+fieldset {
+  display: grid;
+}
 
 div.card-cart {
   display: flex;
@@ -43,9 +51,12 @@ div.card-cart {
   background-color: aqua;
   border-radius: 1rem;
   padding: 1rem;
+  grid-column-start: 5;
+  flex-grow: 1;
 }
 
 div.shopping__cart {
+  font-size: 0.75rem;
   background-color: aliceblue;
   display: flex;
   padding: 1rem;
@@ -58,11 +69,38 @@ div.shopping__list {
   padding: 0;
 }
 
-p.shopping__list__item {
+div.item-card {
+  border: 1px solid black;
   display: flex;
   align-items: center;
+  padding: 0.5rem;
+  gap: 1rem;
 }
 
-.shopping__list__item__deleteicon:hover {
+div.item-card__top-section {
+  margin-bottom: -1rem;
+}
+
+div.item-card__top-section,
+div.item__quantity-price {
+  display: flex;
+  gap: 1rem;
+}
+
+div.item-card__bottom-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+p.item-order-cost {
+  margin: 0;
+}
+
+div.edit-icons {
+  display: flex;
+  flex-direction: column;
+}
+div.edit-icons > *:hover {
   cursor: pointer;
 }

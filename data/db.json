@@ -1,0 +1,80 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tshirt",
+      "description": "Tshirt with HYC logo",
+      "sizesAvailable": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "price": 10
+    },
+    {
+      "id": 2,
+      "name": "Sweatshirt",
+      "description": "Sweatshirt with HYC logo",
+      "sizesAvailable": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "price": 10
+    },
+    {
+      "id": 3,
+      "name": "Flag",
+      "description": "Flag with HYC logo",
+      "sizesAvailable": [],
+      "price": 10
+    },
+    {
+      "id": 4,
+      "name": "Socks",
+      "description": "Socks with HYC logo",
+      "sizesAvailable": [
+        "XXS",
+        "XS",
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "price": 10
+    }
+  ],
+  "orders": [
+    {
+      "fullName": "Devin",
+      "membershipNumber": "11111",
+      "cart": [
+        {
+          "id": 1,
+          "name": "Tshirt",
+          "size": "XXS",
+          "quantity": 1,
+          "cost": 10
+        },
+        {
+          "id": 2,
+          "name": "Flag",
+          "size": "XXS",
+          "quantity": 2,
+          "cost": 5
+        }
+      ],
+      "totalCost": 20,
+      "id": 1
+    }
+  ]
+}
